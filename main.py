@@ -21,6 +21,9 @@ def run(scenario='P0'):
         val_y = np.load(f'data/{scenario}_val_y.npy')
         test_x = np.load(f'data/{scenario}_test_x.npy')
         test_y = np.load(f'data/{scenario}_test_y.npy')
+    except FileNotFoundError as e:
+        print('File not found. Please make sure that the data files are present. They can be requested from the authors.')
+        sys.exit(1)
     except Exception as e:
         print('Error while loading data: ', e)
         sys.exit(1)
