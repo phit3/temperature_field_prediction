@@ -14,12 +14,17 @@ from time import time
 def run(scenario='P0'):
     # loading data
     start = time()
-    train_x = np.load(f'data/{scenario}_train_x.npy')
-    train_y = np.load(f'data/{scenario}_train_y.npy')
-    val_x = np.load(f'data/{scenario}_val_x.npy')
-    val_y = np.load(f'data/{scenario}_val_y.npy')
-    test_x = np.load(f'data/{scenario}_test_x.npy')
-    test_y = np.load(f'data/{scenario}_test_y.npy')
+    try:
+        train_x = np.load(f'data/{scenario}_train_x.npy')
+        train_y = np.load(f'data/{scenario}_train_y.npy')
+        val_x = np.load(f'data/{scenario}_val_x.npy')
+        val_y = np.load(f'data/{scenario}_val_y.npy')
+        test_x = np.load(f'data/{scenario}_test_x.npy')
+        test_y = np.load(f'data/{scenario}_test_y.npy')
+    except Exception as e:
+        print('Error while loading data: ', e)
+        sys.exit(1)
+
     print('loading data took about {} seconds.'.format(time() - start))
 
     # run trainings for different seeds
