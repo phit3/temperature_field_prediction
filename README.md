@@ -3,7 +3,7 @@ In our paper "Inferring the temperature from planar velocity measurements in Ray
 
 ## Installation of requirements
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 ## Get data
 ```bash
