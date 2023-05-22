@@ -9,10 +9,12 @@ pip3 install -r requirements.txt
 ```bash
 mkdir data
 ```
-# You can request data access via email: theo.kaeufer@tu-ilmenau.de
-# After receiving the data, you need to put it into the data folder.
-#
-# The data folder should look as follows:
+You can request data access via email: theo.kaeufer@tu-ilmenau.de
+After receiving the data, you need to put it into the data folder.
+
+The data folder should look as follows:
+
+```bash
 # data/
 # ├── P0_train_x.npy
 # ├── P0_train_y.npy
@@ -32,6 +34,7 @@ mkdir data
 # ├── P2_val_y.npy
 # ├── P2_test_x.npy
 # └── P2_test_y.npy
+```
 
 ## Run experiments
 ```bash
