@@ -129,5 +129,4 @@ class Executor:
 
                 test_losses.append(self.model.loss_function(target_batch, out_batch).cpu().numpy())
                 output[i: i + self.batch_size, :, :, :] = np.array(out_batch.cpu())[:, :, :, :]
-            print('test_loss: {test_loss:.4e}'.format(test_loss=np.mean(test_losses)))
             return output
