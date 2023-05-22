@@ -45,6 +45,7 @@ class Executor:
         max_patience = self.patience
         patience = max_patience
         # iterate over epochs
+        self.history = {'epoch': [], 'loss': [], 'val_loss': [], 'lr': []}
         for e in range(1, self.epochs + 1):
             # training
             self.model.train()
