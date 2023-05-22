@@ -13,7 +13,9 @@ pip install -r requirements.txt
 
 ## Run experiments
 ```bash
-python main.py --scenario <scenario>
+python main.py [--scenario <scenario>] [--repetitions <repetitions>] [--tag <tag>]
 ```
-where `<scenario>` is P1 or P2.
+where `<scenario>` is P0, P1 or P2 (Default: P0).
+      `<repetitions>` is the number of repetitions of the experiment (Default: 5).
+      `<tag>` is an optional tag to identify the experiment (Default: some UUID).
 ```
