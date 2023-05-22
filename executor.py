@@ -16,13 +16,18 @@ class Executor:
         self.batch_size = 64
         self.step_size = 10
         self.gamma = 0.5
-        self.epochs = 100
+        self.epochs = 500
         self.patience = 10
 
         self.optimizer = torch.optim.Adam(self.model.parameters(), eps=1e-7, lr=self.learning_rate)
         self.lr_scheduler = StepLR(self.optimizer, step_size=self.step_size, gamma=self.gamma)
         self.results_dir = results_dir
-        os.makedirs(self.results_dir, exist_ok=True)
+        # create results directory if it does not already exist, if it does, print an error
+        try:
+            os.makedirs(self.results_dir)
+        except FileExistsError:
+            print(f'ERROR: Results directory already exists: {self.results_dir}, please delete it or choose a different tag')
+            exit(1)
 
     def _save_history(self):
         df = pd.DataFrame(self.history)
