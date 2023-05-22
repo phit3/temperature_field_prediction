@@ -19,6 +19,7 @@ class TempPredNet(nn.Module):
         super().__init__()
         self.size_factor = size_factor
         self.seed = seed
+        self.relu_like = nn.ReLU()
         self._setting_seeds()
         self._build_model()
         
