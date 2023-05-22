@@ -5,7 +5,6 @@ from torch.optim.lr_scheduler import StepLR
 import numpy as np
 import pandas as pd
 import os
-import typing
 from time import time
 
 
