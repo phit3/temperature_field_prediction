@@ -7,6 +7,7 @@ pip3 install -r requirements.txt
 ```
 ## Get data
 ```bash
+mkdir data
 # Currently you need to request the data via email: theo.kaeufer@tu-ilmenau.de
 # After receiving the data, you need to put it into the data folder
 ```
