@@ -25,25 +25,29 @@ def run(scenario='P0', repetitions=5, tag=None):
         test_x = np.load(f'data/{scenario}_test_x.npy')
         test_y = np.load(f'data/{scenario}_test_y.npy')
     except FileNotFoundError as e:
-        print('File not found. Please make sure that the data files are present. They can be requested from the authors.')
+        print('ERROR: File not found. Please make sure that the data files are present. They can be requested from the authors.')
         sys.exit(1)
     except Exception as e:
-        print('Error while loading data: ', e)
+        print('ERROR: Could not load data: ', e)
         sys.exit(1)
 
     print('loading data took about {} seconds.'.format(time() - start))
 
     # run trainings for different seeds
     test_maes = []
-    for seed in range(5):
+    for seed in range(repetitions):
         model = TempPredNet(seed=seed)
-        executor = Executor(model, results_dir='results', learning_rate=5.0e-4)
+        results_dir = os.path.join('results', scenario, tag, str(seed))
+        executor = Executor(model, results_dir=results_dir, learning_rate=5.0e-4)
         executor.train(train_x, train_y, val_x, val_y)
         test_z = executor.predict(test_x, test_y)
         test_maes.append(np.mean(np.abs(test_y - test_z)))
         del model
         del executor
-    print('test MAE', np.mean(test_maes), '+/-', np.std(test_maes))
+    if len(test_maes) > 1:
+        print('test MAE', np.mean(test_maes), '+/-', np.std(test_maes))
+    else:
+        print('test MAE', test_maes[0])
 
 # parse command line arguments using argparse
 if __name__ == '__main__':
