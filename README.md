@@ -3,10 +3,11 @@ In our paper "Inferring the temperature from planar velocity measurements in Ray
 
 ## Installation of requirements
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 ## Get data
 ```bash
+mkdir data
 # You can request data access via email: theo.kaeufer@tu-ilmenau.de
 # After receiving the data, you need to put it into the data folder
 ```
