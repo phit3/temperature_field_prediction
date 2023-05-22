@@ -11,7 +11,7 @@ from time import time
 
 class Executor:
     def __init__(self, model: nn.Module, results_dir: str, learning_rate):
-        self.model = model
+        self.model = model.cuda()
         self.learning_rate = learning_rate
         self.batch_size = 64
         self.step_size = 10
