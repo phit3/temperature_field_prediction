@@ -7,7 +7,7 @@ pip install -r requirements.txt
 ```
 ## Get data
 ```bash
-# Currently you need to request the data via email: theo.kaeufer@tu-ilmenau.de
+# You can request data access via email: theo.kaeufer@tu-ilmenau.de
 # After receiving the data, you need to put it into the data folder
 ```
 
