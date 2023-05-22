@@ -19,4 +19,3 @@ python3 main.py [--scenario <scenario>] [--repetitions <repetitions>] [--tag <ta
 where `<scenario>` is P0, P1 or P2 (Default: P0).
       `<repetitions>` is the number of repetitions of the experiment (Default: 5).
       `<tag>` is an optional tag to identify the experiment (Default: some UUID).
-```
