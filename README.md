@@ -10,6 +10,26 @@ pip3 install -r requirements.txt
 mkdir data
 # You can request data access via email: theo.kaeufer@tu-ilmenau.de
 # After receiving the data, you need to put it into the data folder
+# The data folder should contain the following files:
+# data/
+# ├── P0_train_x.npy
+# ├── P0_train_y.npy
+# ├── P0_val_x.npy
+# ├── P0_val_y.npy
+# ├── P0_test_x.npy
+# ├── P0_test_y.npy
+# ├── P1_train_x.npy
+# ├── P1_train_y.npy
+# ├── P1_val_x.npy
+# ├── P1_val_y.npy
+# ├── P1_test_x.npy
+# ├── P1_test_y.npy
+# ├── P2_train_x.npy
+# ├── P2_train_y.npy
+# ├── P2_val_x.npy
+# ├── P2_val_y.npy
+# ├── P2_test_x.npy
+# └── P2_test_y.npy
 ```
 
 ## Run experiments
